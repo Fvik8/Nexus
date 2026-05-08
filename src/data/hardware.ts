@@ -150,7 +150,7 @@ export const HARDWARE_CATALOG: HardwareItem[] = [
   },
   { 
     id: "cool-2", name: "Kraken Elite 360", brand: "NZXT", category: "Cooling", price: 279, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20NZXT%20Kraken%20Elite%20360%20mm%20AIO.png", hot: true,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20NZXT%20Kraken%20Elite%20360mm%20AIO.png", hot: true,
     specs: { capacity: "360mm AIO", clock: "LCD Display" }
   },
   { 
