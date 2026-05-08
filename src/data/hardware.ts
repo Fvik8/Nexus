@@ -54,7 +54,7 @@ export const HARDWARE_CATALOG: HardwareItem[] = [
   },
   { 
     id: "cpu-2", name: "AMD Ryzen 9 9950X", brand: "AMD", category: "CPU", price: 649, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Cpu%20AMD%20Ryzen%209%209950X.png", hot: true,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Cpu%20AMD%20Ryzen%209%209950X3D.png", hot: true,
     specs: { cores: "16", clock: "5.7 GHz", tdp: "170W", socket: "AM5" }
   },
   { 
@@ -81,7 +81,7 @@ export const HARDWARE_CATALOG: HardwareItem[] = [
   // Motherboards
   { 
     id: "mb-1", name: "ROG Maximus Z890 Apex", brand: "ASUS", category: "Motherboards", price: 699, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20ASUS%20ROG%20Maximus%20Z890%20Extreme.png", hot: true,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20ASUS%20ROG%20Maximus%20Z890%20Apex.png", hot: true,
     specs: { socket: "LGA1851", capacity: "Dual-Slot OC" }
   },
   { 
@@ -90,30 +90,30 @@ export const HARDWARE_CATALOG: HardwareItem[] = [
     specs: { socket: "AM5", capacity: "PCIe 5.0 x16" }
   },
   { 
-    id: "mb-3", name: "MSI MEG Z790 GODLIKE", brand: "MSI", category: "Motherboards", price: 1199, 
+    id: "mb-3", name: "MSI MEG X870E GODLIKE", brand: "MSI", category: "Motherboards", price: 1199, 
     img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20MSI%20MEG%20X870E%20GODLIKE.png", hot: false,
-    specs: { socket: "LGA1700", capacity: "M-Vision Dashboard" }
+    specs: { socket: "AM5", capacity: "M-Vision Dashboard" }
   },
   { 
-    id: "mb-4", name: "ASRock Z790 Taichi Lite", brand: "ASRock", category: "Motherboards", price: 499, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20ASRock%20Z790%20Taichi%20Lite.png", hot: false,
+    id: "mb-4", name: "ASRock Z790 Taichi", brand: "ASRock", category: "Motherboards", price: 499, 
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20ASRock%20Z790%20Taichi.png", hot: false,
     specs: { socket: "LGA1700", capacity: "E-ATX" }
   },
   { 
-    id: "mb-5", name: "ROG Strix Z790-E Gaming", brand: "ASUS", category: "Motherboards", price: 649, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20ASUS%20ROG%20Strix%20Z790-E%20Gaming.png", hot: false,
+    id: "mb-5", name: "ROG Strix Z790-F Gaming", brand: "ASUS", category: "Motherboards", price: 649, 
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20ASUS%20ROG%20Strix%20Z790-F%20Gaming.png", hot: false,
     specs: { socket: "LGA1700", capacity: "DDR5-8000+" }
   },
   { 
     id: "mb-6", name: "NEXUS Vector Z890 Pro", brand: "NEXUS", category: "Motherboards", price: 449, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20NEXUS%20Vector%20Z890%20Pro.png", hot: false,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Mobo%20NEXUS%20Vector%20Z890.png", hot: false,
     specs: { socket: "LGA1851", capacity: "Triple 10G LAN" }
   },
 
   // RAM
   { 
     id: "ram-1", name: "Dominator Titanium 64GB", brand: "Corsair", category: "RAM", price: 399, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Ram%20Corsair%20Dominator%20Titanium%20RGB.png", hot: true,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Ram%20Corsair%20Dominator%20Titanium%20DDR5.png", hot: true,
     specs: { capacity: "64GB (2x32)", speed: "8000 MT/s" }
   },
   { 
@@ -142,15 +142,15 @@ export const HARDWARE_CATALOG: HardwareItem[] = [
     specs: { capacity: "32GB (2x16)", speed: "7600 MT/s" }
   },
 
-  // Cooling
+  // Cooling (Бележка: В GitHub имената са "Coolin")
   { 
-    id: "cool-1", name: "Arctic Liquid Freezer III 420", brand: "Arctic", category: "Cooling", price: 119, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20Arctic%20Liquid%20Freezer%20III%20420.png", hot: true,
-    specs: { tdp: "350W", capacity: "420mm AIO" }
+    id: "cool-1", name: "Arctic Liquid Freezer III 360", brand: "Arctic", category: "Cooling", price: 119, 
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20Arctic%20Liquid%20Freezer%20III%20360%20AIO.png", hot: true,
+    specs: { tdp: "350W", capacity: "360mm AIO" }
   },
   { 
     id: "cool-2", name: "Kraken Elite 360", brand: "NZXT", category: "Cooling", price: 279, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20NZXT%20Kraken%20Elite%20360%20RGB.png", hot: true,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20NZXT%20Kraken%20Elite%20360%20mm%20AIO.png", hot: true,
     specs: { capacity: "360mm AIO", clock: "LCD Display" }
   },
   { 
@@ -160,12 +160,12 @@ export const HARDWARE_CATALOG: HardwareItem[] = [
   },
   { 
     id: "cool-4", name: "Lian Li Galahad II LCD", brand: "Lian Li", category: "Cooling", price: 289, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20Lian%20Li%20Galahad%20II%20LCD.png", hot: false,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20Lian%20Li%20Galahad%20II%20LCD%20360mm%20AIO.png", hot: false,
     specs: { capacity: "360mm AIO", clock: "IPS Display" }
   },
   { 
     id: "cool-5", name: "NEXUS Frostflow 360", brand: "NEXUS", category: "Cooling", price: 199, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20NEXUS%20Frostflow%20360.png", hot: false,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Coolin%20NEXUS%20Frostflow%20360mm%20AIO.png", hot: false,
     specs: { capacity: "360mm AIO", clock: "RGB" }
   },
   { 
