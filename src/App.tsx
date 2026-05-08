@@ -1545,7 +1545,14 @@ function HardwareView() {
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: 80, position: "relative" 
             }}>
-              {p.img}
+              <img 
+  src={p.img} 
+  alt={p.name} 
+  style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+/>
+
+      
+/>
               {p.hot && (
                 <div style={{ 
                   position: "absolute", top: 16, right: 16, 
