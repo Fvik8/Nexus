@@ -1550,9 +1550,6 @@ function HardwareView() {
   alt={p.name} 
   style={{ width: "100%", height: "100%", objectFit: "contain" }} 
 />
-
-      
-/>
               {p.hot && (
                 <div style={{ 
                   position: "absolute", top: 16, right: 16, 
