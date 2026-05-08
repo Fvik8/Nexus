@@ -177,7 +177,7 @@ export const HARDWARE_CATALOG: HardwareItem[] = [
   // Cases
   { 
     id: "case-1", name: "Lian Li O11 Dynamic EVO", brand: "Lian Li", category: "Cases", price: 169, 
-    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Case%20Lian%20Li%20O11%20Dynamic%20EVO%20RGB.png", hot: true,
+    img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Case%20Lian%20Li%20O11%20Dynamic%20EVO.png", hot: true,
     specs: { capacity: "Mid Tower Dual Chamber" }
   },
   { 
