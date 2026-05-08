@@ -483,7 +483,8 @@ function Hero() {
 }
 
 // ─── DAILY DROP COUNTDOWN ─────────────────────────────────────────────────────
-function DailyDrop() {
+
+            function DailyDrop() {
   const [timeLeft, setTimeLeft] = useState({ h: 5, m: 47, s: 33 });
 
   useEffect(() => {
@@ -502,9 +503,36 @@ function DailyDrop() {
   const pad = n => String(n).padStart(2, "0");
 
   const drops = [
-    { id: 'd1', name: "ROG SWIFT OLED 4K", sub: "360Hz — 0.03ms GtG", price: 1299, units: 12, img: "🖥️", hot: true, category: "Monitor" },
-    { id: 'd2', name: "Wooting 60HE+ APEX", sub: "Analog Hall Effect — 0.1ms", price: 199, units: 34, img: "⌨️", hot: false, category: "Keyboard" },
-    { id: 'd3', name: "Xenics Titan Air", sub: "26K DPI — 95g Ultralight", price: 149, units: 7, img: "🖱️", hot: true, category: "Mouse" },
+    { 
+      id: 'd1', 
+      name: "ROG SWIFT OLED 4K", 
+      sub: "360Hz — 0.03ms GtG", 
+      price: 1299, 
+      units: 12, 
+      img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/ROG%20SWIFT%20OLED%204K%20.png", 
+      hot: true, 
+      category: "Monitor" 
+    },
+    { 
+      id: 'd2', 
+      name: "Wooting 60HE+ APEX", 
+      sub: "Analog Hall Effect — 0.1ms", 
+      price: 199, 
+      units: 34, 
+      img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Wooting%2060HE%2B%20APEX.png", 
+      hot: false, 
+      category: "Keyboard" 
+    },
+    { 
+      id: 'd3', 
+      name: "Xenics Titan Air", 
+      sub: "26K DPI — 95g Ultralight", 
+      price: 149, 
+      units: 7, 
+      img: "https://raw.githubusercontent.com/Fvik8/Nexus/main/Images/Xenics%20Titan%20Air.png", 
+      hot: true, 
+      category: "Mouse" 
+    },
   ];
 
   const addToCart = useNexusStore(state => state.addToCart);
@@ -520,13 +548,11 @@ function DailyDrop() {
         background: "linear-gradient(90deg, transparent, rgba(0,245,255,0.4), transparent)",
       }} />
 
-      {/* Header */}
       <div style={{ textAlign: "center", marginBottom: 60 }}>
         <div className="mono" style={{ fontSize: 11, letterSpacing: 5, color: TOKENS.magenta, marginBottom: 12 }}>
           ⚡ FLASH EVENT — ENDS IN
         </div>
 
-        {/* Countdown */}
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 4, marginBottom: 24 }}>
           {[
             { val: pad(timeLeft.h), label: "HRS" },
@@ -540,90 +566,59 @@ function DailyDrop() {
             <div key={i} style={{ textAlign: "center" }}>
               <div className="glass orbitron" style={{
                 fontSize: 52, fontWeight: 900, padding: "4px 16px", borderRadius: 6,
-                color: TOKENS.textPrimary, minWidth: 90, textAlign: "center",
-                border: "1px solid rgba(0,245,255,0.2)",
-                boxShadow: "0 0 30px rgba(0,245,255,0.05)",
+                color: TOKENS.textPrimary, minWidth: 90, border: "1px solid rgba(0,245,255,0.2)",
               }}>{item.val}</div>
               <div className="mono" style={{ fontSize: 9, letterSpacing: 3, color: TOKENS.textMuted, marginTop: 6 }}>{item.label}</div>
             </div>
           ))}
         </div>
-
         <h2 className="orbitron" style={{ fontSize: 36, fontWeight: 900, letterSpacing: -1 }}>
           DAILY <span className="neon-text-magenta">DROP</span>
         </h2>
       </div>
 
-      {/* Drop cards */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, maxWidth: 1100, margin: "0 auto" }}>
         {drops.map((item, i) => (
           <div key={i} className="glass mag-btn" style={{
-            borderRadius: 12, overflow: "hidden", cursor: "pointer",
+            borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative",
             border: item.hot ? `1px solid rgba(255,45,120,0.3)` : "1px solid rgba(99,102,241,0.15)",
-            transition: "all 0.3s ease",
-            position: "relative",
-          }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = "translateY(-6px)";
-              e.currentTarget.style.boxShadow = `0 20px 60px rgba(${item.hot ? "255,45,120" : "0,245,255"},0.2)`;
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = "";
-              e.currentTarget.style.boxShadow = "";
-            }}>
-
+          }}>
             {item.hot && (
               <div style={{
-                position: "absolute", top: 12, right: 12,
-                padding: "4px 10px", borderRadius: 20,
-                background: "linear-gradient(135deg, #ff2d78, #ff9500)",
-                fontSize: 9, fontWeight: 700, letterSpacing: 2, color: "#fff",
-                zIndex: 2,
+                position: "absolute", top: 12, right: 12, padding: "4px 10px", borderRadius: 20,
+                background: "linear-gradient(135deg, #ff2d78, #ff9500)", fontSize: 9, fontWeight: 700, zIndex: 2,
               }}>🔥 HOT</div>
             )}
 
             <div style={{
-              height: 160, display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 72,
+              height: 180, display: "flex", alignItems: "center", justifyContent: "center", padding: "20px",
               background: "linear-gradient(135deg, rgba(124,58,237,0.1), rgba(0,245,255,0.05))",
-            }}>{item.img}</div>
+            }}>
+              <img 
+                src={item.img} 
+                alt={item.name} 
+                style={{ 
+                  maxWidth: '100%', maxHeight: '100%', objectFit: 'contain',
+                  filter: item.hot ? 'drop-shadow(0 0 15px rgba(255,45,120,0.5))' : 'drop-shadow(0 0 15px rgba(0,245,255,0.4))'
+                }} 
+              />
+            </div>
 
             <div style={{ padding: 20 }}>
-              <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4, color: TOKENS.textPrimary }}>{item.name}</div>
-              <div className="mono" style={{ fontSize: 10, color: TOKENS.textMuted, marginBottom: 16, letterSpacing: 1 }}>{item.sub}</div>
-
-              {/* Stock bar */}
+              <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{item.name}</div>
+              <div className="mono" style={{ fontSize: 10, color: TOKENS.textMuted, marginBottom: 16 }}>{item.sub}</div>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-                  <span className="mono" style={{ fontSize: 9, color: TOKENS.textMuted, letterSpacing: 1 }}>UNITS LEFT</span>
-                  <span className="mono" style={{ fontSize: 9, color: item.units < 15 ? TOKENS.magenta : TOKENS.cyan }}>
-                    {item.units} / 50
-                  </span>
+                  <span className="mono" style={{ fontSize: 9, color: TOKENS.textMuted }}>UNITS LEFT</span>
+                  <span className="mono" style={{ fontSize: 9, color: item.units < 15 ? TOKENS.magenta : TOKENS.cyan }}>{item.units} / 50</span>
                 </div>
                 <div style={{ height: 3, background: "rgba(255,255,255,0.08)", borderRadius: 2, overflow: "hidden" }}>
-                  <div style={{
-                    width: `${(item.units / 50) * 100}%`, height: "100%",
-                    background: item.units < 15
-                      ? "linear-gradient(90deg, #ff2d78, #ff9500)"
-                      : "linear-gradient(90deg, #7c3aed, #00f5ff)",
-                    borderRadius: 2,
-                    transition: "width 1s ease",
-                  }} />
+                  <div style={{ width: `${(item.units / 50) * 100}%`, height: "100%", background: item.units < 15 ? "#ff2d78" : "#00f5ff" }} />
                 </div>
               </div>
-
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span className="orbitron" style={{ fontSize: 20, fontWeight: 900, color: TOKENS.gold }}>${item.price.toLocaleString()}</span>
-                <button 
-                  onClick={() => addToCart(item)}
-                  style={{
-                    padding: "8px 16px", borderRadius: 4,
-                    background: item.hot
-                      ? "linear-gradient(135deg, #ff2d78, #ff9500)"
-                      : "linear-gradient(135deg, #7c3aed, #00f5ff)",
-                    border: "none", color: "#fff",
-                    fontSize: 11, fontWeight: 700, letterSpacing: 2, cursor: "pointer",
-                  }}>BUY NOW</button>
+                <button onClick={() => addToCart(item)} className="buy-btn">BUY NOW</button>
               </div>
             </div>
           </div>
@@ -632,6 +627,8 @@ function DailyDrop() {
     </section>
   );
 }
+  
+
 
 // ─── PC BUILDER ───────────────────────────────────────────────────────────────
 function PCBuilder() {
