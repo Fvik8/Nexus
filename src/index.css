@@ -48,87 +48,85 @@ body {
 }
 
 /* =============================================
-   🚀 COMPLETE MOBILE & RESPONSIVE FIXES 
+   🚀 FINAL MOBILE OPTIMIZATION (FULL STRETCH)
    ============================================= */
 
 @media (max-width: 768px) {
-  /* 1. Глобални настройки за екрана */
-  html, body {
-    overflow-x: hidden;
-    position: relative;
-    width: 100vw;
+  /* 1. Премахваме ограниченията на контейнерите */
+  .container, [class*="max-w-"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin: 0 auto !important;
   }
 
-  /* 2. Вертикално подреждане на всички секции */
-  .flex {
+  /* 2. Оправяме Daily Drop картите (да не са отрязани) */
+  .grid-cols-3, .grid-cols-2, .grid {
+    display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  /* 3. Оправяне на Grid системите (Daily Drop и компоненти) */
-  .grid, [class*="grid-cols-"] {
-    grid-template-columns: 1fr !important;
-    display: grid !important;
     gap: 1.5rem !important;
     width: 100% !important;
   }
 
-  /* 4. Оправяне на заглавията (RTX 5090 и др.) */
-  h1, .text-6xl, .text-7xl, .text-8xl {
-    font-size: 2.2rem !important;
-    line-height: 1.1 !important;
-    white-space: normal !important;
-    text-align: center !important;
-    width: 100% !important;
+  /* 3. СПИРАМЕ РЯЗАНЕТО НА ТЕКСТА (Критично за Daily Drop) */
+  .glass-panel, div, p, span, h1, h2, h3 {
+    white-space: normal !important; /* Позволява пренасяне на нов ред */
+    word-wrap: break-word !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
   }
 
-  h2, .text-4xl, .text-5xl {
-    font-size: 1.7rem !important;
-    text-align: center !important;
-  }
-
-  /* 5. Снимките да се свиват правилно */
-  img {
-    max-width: 100% !important;
+  /* 4. Оправяне на височината на картите */
+  .glass-panel {
     height: auto !important;
-    margin: 0 auto !important;
+    min-height: min-content !important;
+    padding: 1.5rem !important;
   }
 
-  /* 6. Премахване на фиксирани ширини */
-  [class*="w-["], .w-screen, .glass-panel {
+  /* 5. Мащабиране на заглавията */
+  h1, .text-6xl, .text-7xl {
+    font-size: 2.4rem !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+  }
+
+  /* 6. FPS Predictor бутони и опции */
+  .flex-wrap, .grid-cols-4 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* 2 колони за малки бутони */
+    gap: 0.5rem !important;
+  }
+
+  /* Ако са големи бутони, отиват в 1 колона */
+  .predict-btn, button[class*="w-full"] {
+    grid-column: span 2 !important;
     width: 100% !important;
-    max-width: 100% !important;
-    min-width: unset !important;
   }
 
-  /* 7. FPS Predictor и интерактивни елементи */
-  button, .predict-btn {
-    width: 100% !important;
-    margin-top: 10px;
-  }
-
-  /* 8. Навигация и футер */
+  /* 7. Навигация */
   nav {
-    padding: 1rem !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
     justify-content: center !important;
   }
 
-  footer .flex {
-    text-align: center !important;
-    gap: 1rem !important;
+  /* 8. Изображения */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
 
-  /* 9. Превръщане на вертикалния текст в хоризонтален */
-  .vertical-text {
-    writing-mode: horizontal-tb !important;
+  /* 9. Премахване на фиксирани отмествания (Transform/Translate) */
+  [class*="translate-x-"], [class*="translate-y-"] {
     transform: none !important;
-    margin: 1rem 0 !important;
-    text-align: center !important;
   }
 
-  /* 10. Вътрешни отстояния */
-  section, .container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  /* 10. Поправка за футера */
+  footer .flex {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
   }
 }
