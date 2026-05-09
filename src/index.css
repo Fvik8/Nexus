@@ -16,7 +16,7 @@ body {
   background-color: var(--bg-deep);
   color: #fff;
   @apply antialiased overflow-x-hidden font-sans;
-  width: 100%;
+  width: 100% !important;
 }
 
 .cyber-grid {
@@ -48,85 +48,73 @@ body {
 }
 
 /* =============================================
-   🚀 FINAL MOBILE OPTIMIZATION (FULL STRETCH)
+   🏁 NUCLEAR MOBILE FIX - FORCE FULL WIDTH
    ============================================= */
 
 @media (max-width: 768px) {
-  /* 1. Премахваме ограниченията на контейнерите */
-  .container, [class*="max-w-"] {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    margin: 0 auto !important;
+  /* Принуждаваме главния контейнер да запълни екрана */
+  #root, main, .app-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    display: block !important;
   }
 
-  /* 2. Оправяме Daily Drop картите (да не са отрязани) */
-  .grid-cols-3, .grid-cols-2, .grid {
+  /* Разпъваме абсолютно всички елементи, които имат фиксирана ширина */
+  div[class*="w-"], section[class*="w-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Поправка за Flexbox, който държи нещата на един ред */
+  .flex {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* Специфична поправка за Daily Drop - правим ги големи карти */
+  .grid, [class*="grid-cols-"] {
     display: flex !important;
     flex-direction: column !important;
-    gap: 1.5rem !important;
-    width: 100% !important;
+    gap: 2rem !important;
+    padding: 1rem !important;
   }
 
-  /* 3. СПИРАМЕ РЯЗАНЕТО НА ТЕКСТА (Критично за Daily Drop) */
-  .glass-panel, div, p, span, h1, h2, h3 {
-    white-space: normal !important; /* Позволява пренасяне на нов ред */
-    word-wrap: break-word !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
+  /* Текстът да не се реже */
+  * {
+    white-space: normal !important;
+    word-break: break-word !important;
   }
 
-  /* 4. Оправяне на височината на картите */
-  .glass-panel {
-    height: auto !important;
-    min-height: min-content !important;
-    padding: 1.5rem !important;
-  }
-
-  /* 5. Мащабиране на заглавията */
-  h1, .text-6xl, .text-7xl {
-    font-size: 2.4rem !important;
-    line-height: 1.1 !important;
+  h1 {
+    font-size: 2.2rem !important;
     text-align: center !important;
-  }
-
-  /* 6. FPS Predictor бутони и опции */
-  .flex-wrap, .grid-cols-4 {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* 2 колони за малки бутони */
-    gap: 0.5rem !important;
-  }
-
-  /* Ако са големи бутони, отиват в 1 колона */
-  .predict-btn, button[class*="w-full"] {
-    grid-column: span 2 !important;
     width: 100% !important;
   }
 
-  /* 7. Навигация */
+  /* Бутоните да са големи и удобни */
+  button, .secure-yours-btn {
+    width: 90% !important;
+    margin: 10px auto !important;
+    display: block !important;
+  }
+
+  /* Навигацията да не избутва сайта */
   nav {
+    width: 100% !important;
+    flex-direction: row !important;
     flex-wrap: wrap !important;
-    gap: 0.5rem !important;
     justify-content: center !important;
+    padding: 1rem 0 !important;
   }
 
-  /* 8. Изображения */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-  }
-
-  /* 9. Премахване на фиксирани отмествания (Transform/Translate) */
-  [class*="translate-x-"], [class*="translate-y-"] {
+  .vertical-text {
+    writing-mode: horizontal-tb !important;
     transform: none !important;
-  }
-
-  /* 10. Поправка за футера */
-  footer .flex {
-    flex-direction: column !important;
     text-align: center !important;
-    gap: 1.5rem !important;
   }
 }
