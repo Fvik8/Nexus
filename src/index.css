@@ -48,62 +48,87 @@ body {
 }
 
 /* =============================================
-   🚀 MOBILE & RESPONSIVE FIXES 
+   🚀 COMPLETE MOBILE & RESPONSIVE FIXES 
    ============================================= */
 
 @media (max-width: 768px) {
-  /* Спираме хоризонталното скролване */
+  /* 1. Глобални настройки за екрана */
   html, body {
     overflow-x: hidden;
     position: relative;
+    width: 100vw;
   }
 
-  /* Принуждаваме всички Flex контейнери да станат вертикални */
+  /* 2. Вертикално подреждане на всички секции */
   .flex {
     flex-direction: column !important;
+    align-items: center !important;
   }
 
-  /* Оправяме застъпващия се текст и големите заглавия */
+  /* 3. Оправяне на Grid системите (Daily Drop и компоненти) */
+  .grid, [class*="grid-cols-"] {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  /* 4. Оправяне на заглавията (RTX 5090 и др.) */
   h1, .text-6xl, .text-7xl, .text-8xl {
-    font-size: 2.5rem !important;
+    font-size: 2.2rem !important;
     line-height: 1.1 !important;
     white-space: normal !important;
-    text-align: center;
+    text-align: center !important;
+    width: 100% !important;
   }
 
   h2, .text-4xl, .text-5xl {
-    font-size: 1.8rem !important;
-    text-align: center;
+    font-size: 1.7rem !important;
+    text-align: center !important;
   }
 
-  /* Снимките (RTX 5090 и др.) да не излизат от екрана */
+  /* 5. Снимките да се свиват правилно */
   img {
     max-width: 100% !important;
     height: auto !important;
-    display: block;
-    margin: 0 auto;
+    margin: 0 auto !important;
   }
 
-  /* Махаме фиксираните ширини, които чупят дизайна */
-  [class*="w-["], .w-screen {
+  /* 6. Премахване на фиксирани ширини */
+  [class*="w-["], .w-screen, .glass-panel {
     width: 100% !important;
-    max-width: 100vw !important;
+    max-width: 100% !important;
+    min-width: unset !important;
   }
 
-  /* Поправка за навигацията и бутоните */
+  /* 7. FPS Predictor и интерактивни елементи */
+  button, .predict-btn {
+    width: 100% !important;
+    margin-top: 10px;
+  }
+
+  /* 8. Навигация и футер */
   nav {
-    padding: 10px !important;
+    padding: 1rem !important;
+    justify-content: center !important;
   }
 
+  footer .flex {
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+
+  /* 9. Превръщане на вертикалния текст в хоризонтален */
   .vertical-text {
     writing-mode: horizontal-tb !important;
     transform: none !important;
-    margin-bottom: 20px;
+    margin: 1rem 0 !important;
+    text-align: center !important;
   }
 
-  /* Секциите да имат малко отстояние от краищата на телефона */
-  section, div {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+  /* 10. Вътрешни отстояния */
+  section, .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 }
