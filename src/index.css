@@ -16,6 +16,7 @@ body {
   background-color: var(--bg-deep);
   color: #fff;
   @apply antialiased overflow-x-hidden font-sans;
+  width: 100%;
 }
 
 .cyber-grid {
@@ -46,3 +47,63 @@ body {
   transform: rotate(180deg);
 }
 
+/* =============================================
+   🚀 MOBILE & RESPONSIVE FIXES 
+   ============================================= */
+
+@media (max-width: 768px) {
+  /* Спираме хоризонталното скролване */
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Принуждаваме всички Flex контейнери да станат вертикални */
+  .flex {
+    flex-direction: column !important;
+  }
+
+  /* Оправяме застъпващия се текст и големите заглавия */
+  h1, .text-6xl, .text-7xl, .text-8xl {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+    white-space: normal !important;
+    text-align: center;
+  }
+
+  h2, .text-4xl, .text-5xl {
+    font-size: 1.8rem !important;
+    text-align: center;
+  }
+
+  /* Снимките (RTX 5090 и др.) да не излизат от екрана */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Махаме фиксираните ширини, които чупят дизайна */
+  [class*="w-["], .w-screen {
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Поправка за навигацията и бутоните */
+  nav {
+    padding: 10px !important;
+  }
+
+  .vertical-text {
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+    margin-bottom: 20px;
+  }
+
+  /* Секциите да имат малко отстояние от краищата на телефона */
+  section, div {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
