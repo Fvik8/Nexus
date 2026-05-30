@@ -1883,9 +1883,28 @@ function CartDrawer({ onClose }) {
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               {cart.map(item => (
                 <div key={item.id} style={{ display: "flex", gap: 16, borderBottom: `1px solid rgba(255,255,255,0.05)`, paddingBottom: 24 }}>
-                  <div style={{ width: 60, height: 60, borderRadius: 8, background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 32 }}>
-                    {item.img}
-                  </div>
+                                  <div style={{ 
+                  width: 60, 
+                  height: 60, 
+                  borderRadius: 8, 
+                  background: "rgba(255,255,255,0.05)", 
+                  display: "flex", 
+                  alignItems: "center", 
+                  justifyContent: "center", 
+                  overflow: "hidden", 
+                  flexShrink: 0 
+                }>
+                  {item.img && item.img.startsWith("http") ? (
+                    <img 
+                      src={item.img} 
+                      alt={item.name} 
+                      style={{ width: "100%", height: "100%", objectFit: "contain", padding: 4 }} 
+                    />
+                  ) : (
+                    <span style={{ fontSize: 24 }}>{item.img || "📦"}</span>
+                  
+                </div>
+
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: 15, fontWeight: 700, color: TOKENS.textPrimary, marginBottom: 4 }}>{item.name}</div>
                     <div className="mono" style={{ fontSize: 11, color: TOKENS.textMuted, marginBottom: 12 }}>{item.category}</div>
