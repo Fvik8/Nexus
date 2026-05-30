@@ -1893,7 +1893,7 @@ function CartDrawer({ onClose }) {
                   justifyContent: "center", 
                   overflow: "hidden", 
                   flexShrink: 0 
-                }>
+                }}>
                   {item.img && item.img.startsWith("http") ? (
                     <img 
                       src={item.img} 
